@@ -89,6 +89,23 @@ button:hover {
     font-size: 0.9rem;
 }
 
+#listaRendas, #listaGastos {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espaço entre cada item da lista */
+}
+
+/* Cada item individual (renda ou gasto) */
+.item-listado {
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
 /* A partir daqui, regras que só valem pra telas com 600px ou mais
 (tablets/desktop) — é aqui que o "mobile-first" aparece:
 o CSS acima é a base pra celular, isso aqui é o "extra" pra tela grande */
