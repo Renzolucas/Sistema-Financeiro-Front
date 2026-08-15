@@ -1,0 +1,109 @@
+/* Reset básico: remove margens/paddings padrão do navegador e
+   inclui borda/padding dentro da largura total do elemento */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fundo escuro geral da página e cor de texto clara (tema dark) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 16px;
+}
+
+/* Caixa que envolve o formulário: fundo um pouco mais claro
+   que o body, pra criar contraste/profundidade */
+.container {
+    max-width: 100%;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+}
+
+/* Título da página */
+h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Texto acima de cada campo (Nome:, Email:, Senha:) */
+label {
+    display: block; /* label ocupa a linha inteira, empurra o input pra baixo */
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: #b0b0b0; /* cinza claro, menos destaque que o texto principal */
+}
+
+/* Campos de digitação (nome, email, senha) */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #2a2a2a; /* fundo do input mais claro que o container */
+    color: #e0e0e0;
+}
+
+/* Cor do texto de exemplo dentro do input (ex: "Digite seu nome") */
+input::placeholder {
+    color: #777;
+}
+
+/* Quando o usuário clica/seleciona o input, some com a borda
+   padrão do navegador e usa uma borda azul customizada */
+input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+/* Botão de cadastrar */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer; /* mostra "mãozinha" ao passar o mouse */
+}
+
+/* Cor do botão ao passar o mouse por cima (efeito hover) */
+button:hover {
+    background-color: #5b9ee8;
+}
+
+/* Área onde vamos exibir mensagem de sucesso/erro depois do fetch */
+#resultado {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* A partir daqui, regras que só valem pra telas com 600px ou mais
+(tablets/desktop) — é aqui que o "mobile-first" aparece:
+o CSS acima é a base pra celular, isso aqui é o "extra" pra tela grande */
+@media (min-width: 600px) {
+    /* Centraliza o formulário no meio da tela (vertical e horizontal) */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    /* Limita a largura do formulário, pra não ficar esticado
+       demais numa tela grande */
+    .container {
+        max-width: 400px;
+    }
+}
