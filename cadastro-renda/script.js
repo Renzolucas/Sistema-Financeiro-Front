@@ -25,7 +25,7 @@ formulario.addEventListener('submit', async function (evento) {
         const mensagem = 'ERRO AO CRIAR RENDA'
         const rendaCriada = await post(`http://localhost:8080/users/${userId}/rendas`, dadosRenda, mensagem);
 
-        divResultado.textContent = `Renda de R$ ${rendaCriada.valor} cadastrada com sucesso!`;
+        divResultado.textContent = `Renda de R$${rendaCriada.valor} cadastrada com sucesso!`;
         divResultado.style.color = '#4caf50';
 
         formulario.reset();
