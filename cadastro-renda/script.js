@@ -1,3 +1,5 @@
+import { post } from "../api.js";
+
 const formulario = document.getElementById('formRenda');
 const divResultado = document.getElementById('resultado');
 //data hora
@@ -20,19 +22,8 @@ formulario.addEventListener('submit', async function (evento) {
     
 
     try {
-        const resposta = await fetch(`http://localhost:8080/users/${userId}/rendas`,{
-            method: 'POST',
-            headers:{
-                'Content-Type' : 'application/json'
-            },
-            body: JSON.stringify(dadosRenda)
-        });
-
-        if(!resposta.ok){
-            throw new Error('Erro ao cadastrar renda')
-        }
-        
-        const rendaCriada = await resposta.json();
+        const mensagem = 'ERRO AO CRIAR RENDA'
+        const rendaCriada = await post(`http://localhost:8080/users/${userId}/rendas`, dadosRenda, mensagem);
 
         divResultado.textContent = `Renda de R$ ${rendaCriada.valor} cadastrada com sucesso!`;
         divResultado.style.color = '#4caf50';
