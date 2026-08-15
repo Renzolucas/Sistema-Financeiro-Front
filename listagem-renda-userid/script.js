@@ -1,0 +1,17 @@
+import { get, renderizarLista } from "../api.js";
+
+const divLista = document.getElementById('listaRendas')
+const btnRenda = document.getElementById('btnBuscar')
+
+btnRenda.addEventListener('click', async function () {
+    const userId = document.getElementById('userId').value;
+    try {
+        const rendas = await get(`http://localhost:8080/users/${userId}/rendas`, "nao foi possivel fazer a listagem")
+        renderizarLista(divLista, rendas, function (elemento, renda){
+            elemento.textContent = `R$${renda.valor} - ${renda.dataHora}`;
+        });
+    } catch (erro) {
+        divLista.textContent = 'Erro ao buscar rendas.'
+        console.error(erro);
+    }
+});
