@@ -1,3 +1,5 @@
+import { post } from "../api.js";
+
 const formulario = document.getElementById('formCadastro');
 const divResultado = document.getElementById('resultado');
 
@@ -20,21 +22,8 @@ formulario.addEventListener('submit', async function (evento) {
 
     //Se tudo der certo
     try{
-        const resposta = await fetch('http://localhost:8080/users',{
-
-            method: 'POST', //metodo post
-            headers:{
-                'Content-Type' : 'application/json' //avisa que o body e json
-            },
-            body: JSON.stringify(dadosUsuario) //converte o objeto js para json
-        }); //fetch fim
-
-        if(resposta.status !== 201){
-            throw new Error('erro ao cadastrar usuario')
-        }
-
         //converte o json de volta a js
-        const usuarioCriado = await resposta.json();
+        const usuarioCriado = await post(`http://localhost:8080/users`, dadosUsuario, "erro ao cadastrar usuario");
 
         //exibi a mensagem de saucesso com nome da pessoa
         divResultado.textContent = `Usuário ${usuarioCriado.nome} Cadastrado com sucesso!`;
