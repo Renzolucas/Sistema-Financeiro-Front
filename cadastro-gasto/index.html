@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Gastos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Cadastrar Gastos</h1>
+
+        <form id="formGasto">
+        <label for="userId">Id do Usuario(temporario): </label>
+        <input type="number" id="userId" placeholder="Ex: 1" required>
+
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" placeholder="Mulheres">
+
+        <label for="valor">Valor: </label>
+        <input type="number" id="valor" step="0.01" placeholder="Ex: 1500" required>
+
+        <label for="Categoria"></label>
+        <select id="categoria" required>
+            <option value="">ESCOLHA UMA OPÇÃO</option>
+            <option value="ALIMENTACAO">Alimentação</option>
+            <option value="EDUCACAO">Educação</option>
+            <option value="LAZER">Lazer</option>
+            <option value="SAUDE">Saúde</option>
+            <option value="TRANSPORTE">Transporte</option>
+        </select>
+        
+        <label for="dataHora">Data e Hora</label>
+        <input type="datetime-local" id="dataHora" required>
+        <button type="button" id="btndataAtual">Usar Data/Hora atual</button>
+
+        <button type="submit">Cadastrar Gastos</button>
+        </form>
+        <div id="resultado"></div>
+    </main>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
