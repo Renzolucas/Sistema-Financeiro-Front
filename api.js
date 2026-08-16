@@ -11,7 +11,9 @@ export{ post };
 
 async function get(url, message) {
     const resposta = await fetch(url)
+    
     if(!resposta.ok){throw new Error(message)}
+
     const listas = await resposta.json();
     return listas;
 }
