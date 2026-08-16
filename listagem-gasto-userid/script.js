@@ -1,5 +1,5 @@
-import { get, renderizarLista } from "../api.js";
-
+import { get, renderizarLista,carregarHeader } from "../api.js";
+carregarHeader();
 const btnBuscar = document.getElementById('btnBuscar');
 const divLista = document.getElementById('listaGastos');
 

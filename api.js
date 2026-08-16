@@ -1,3 +1,4 @@
+//post
 async function post(url, dados,message){
     const resposta = await fetch(url,{
         method: 'POST',
@@ -9,6 +10,7 @@ async function post(url, dados,message){
 }
 export{ post };
 
+//para gets
 async function get(url, message) {
     const resposta = await fetch(url)
     
@@ -19,6 +21,7 @@ async function get(url, message) {
 }
 export{ get };
 
+//para listas
 function renderizarLista(container, itens, montarConteudo){
     container.innerHTML = '';
     if(itens.length === 0){
@@ -34,3 +37,11 @@ function renderizarLista(container, itens, montarConteudo){
     });
 }
 export { renderizarLista };
+
+//layout
+async function carregarHeader() {
+    const resposta = await fetch ('../layout/index.html');
+    const html = await resposta.text(); //transforma em texto puro html
+    document.getElementById('header-placeholder').innerHTML = html;
+}
+export{ carregarHeader }

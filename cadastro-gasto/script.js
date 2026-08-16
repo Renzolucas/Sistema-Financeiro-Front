@@ -1,5 +1,5 @@
-import { post } from "../api.js";
-
+import { post, carregarHeader } from "../api.js";
+carregarHeader();
 const formulario = document.getElementById('formGasto');
 const divResultado = document.getElementById('resultado');
 
