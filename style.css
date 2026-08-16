@@ -46,9 +46,9 @@ input {
     width: 100%;
     padding: 10px;
     border: 1px solid #3a3a3a;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
-    background-color: #2a2a2a; /* fundo do input mais claro que o container */
+    background-color: rgb(42, 42, 42); /* fundo do input mais claro que o container */
     color: #e0e0e0;
 }
 
@@ -72,7 +72,7 @@ button {
     background-color: #4a90e2;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer; /* mostra "mãozinha" ao passar o mouse */
 }
@@ -87,6 +87,18 @@ button:hover {
     margin-top: 16px;
     text-align: center;
     font-size: 0.9rem;
+}
+
+#categoria{
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px solid #3a3a3a;
+    background-color: rgb(42, 42, 42);;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 #listaRendas, #listaGastos {
